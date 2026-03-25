@@ -1,6 +1,6 @@
 const eventLinks = [
   {
-    title: "Squid Game (Surprise)",
+    title: "Fun Activity (Ground)",
     description: "Team challenge registration",
     href: "https://forms.gle/KfnzofFYBK1PzPJr8",
   },
@@ -10,7 +10,7 @@ const eventLinks = [
     href: "https://forms.gle/uDwguMqv3FkSi4NU9",
   },
   {
-    title: "LAN Gaming",
+    title: "E-Sports (Collab)",
     description: "Gaming tournament sign-up",
     href: "https://forms.gle/dY3uGxA953XwxZLQA",
   },
