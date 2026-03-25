@@ -1,0 +1,272 @@
+@import "tailwindcss";
+
+:root {
+  --background: #0f172a;
+  --foreground: #f8fafc;
+}
+
+@theme inline {
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --font-sans: var(--font-body);
+}
+
+body {
+  background: var(--background);
+  color: var(--foreground);
+  font-family: var(--font-body), "Segoe UI", sans-serif;
+}
+
+.font-display {
+  font-family: var(--font-display), "Segoe UI", sans-serif;
+  letter-spacing: 0.02em;
+}
+
+body::before {
+  content: "";
+  position: fixed;
+  inset: 0;
+  z-index: -2;
+  background:
+    radial-gradient(circle at 10% 20%, rgba(34, 197, 94, 0.24), transparent 38%),
+    radial-gradient(circle at 90% 15%, rgba(56, 189, 248, 0.25), transparent 40%),
+    radial-gradient(circle at 50% 100%, rgba(249, 115, 22, 0.22), transparent 42%),
+    linear-gradient(165deg, #090f22 0%, #152048 40%, #2a1145 72%, #0f172a 100%);
+}
+
+body::after {
+  content: "";
+  position: fixed;
+  inset: 0;
+  z-index: -1;
+  opacity: 0.2;
+  background-image: linear-gradient(rgba(255, 255, 255, 0.12) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(255, 255, 255, 0.12) 1px, transparent 1px);
+  background-size: 36px 36px;
+  mask-image: radial-gradient(circle at center, black 38%, transparent 95%);
+}
+
+.hero-orb {
+  position: absolute;
+  border-radius: 9999px;
+  filter: blur(24px);
+  opacity: 0.55;
+  pointer-events: none;
+}
+
+.hero-orb-a {
+  width: 260px;
+  height: 260px;
+  left: -80px;
+  top: 10vh;
+  background: linear-gradient(160deg, #34d399, #38bdf8, #f9a8d4);
+  animation: drift 7s ease-in-out infinite alternate;
+}
+
+.hero-orb-b {
+  width: 220px;
+  height: 220px;
+  right: -50px;
+  bottom: 8vh;
+  background: linear-gradient(160deg, #f97316, #fb7185, #a78bfa);
+  animation: drift 8s ease-in-out infinite alternate-reverse;
+}
+
+.party-beam {
+  position: absolute;
+  width: 520px;
+  height: 220px;
+  border-radius: 9999px;
+  filter: blur(30px);
+  opacity: 0.24;
+  pointer-events: none;
+}
+
+.party-beam-a {
+  top: -52px;
+  left: -90px;
+  background: linear-gradient(110deg, #22d3ee, #f472b6 70%);
+  animation: beam-wave 9s ease-in-out infinite;
+}
+
+.party-beam-b {
+  right: -140px;
+  top: 30vh;
+  background: linear-gradient(100deg, #facc15, #fb7185 68%);
+  animation: beam-wave 10s ease-in-out infinite reverse;
+}
+
+.spark {
+  position: absolute;
+  width: 9px;
+  height: 9px;
+  border-radius: 9999px;
+  background: radial-gradient(circle at 30% 30%, #fff, #67e8f9 60%, transparent 70%);
+  box-shadow: 0 0 18px #67e8f9;
+  pointer-events: none;
+}
+
+.spark-a {
+  left: 14%;
+  top: 20%;
+  animation: sparkle 3.2s ease-in-out infinite;
+}
+
+.spark-b {
+  right: 18%;
+  top: 14%;
+  animation: sparkle 2.6s ease-in-out infinite 0.4s;
+}
+
+.spark-c {
+  right: 12%;
+  bottom: 18%;
+  animation: sparkle 3.4s ease-in-out infinite 0.2s;
+}
+
+.panel-party {
+  border: 1px solid rgba(255, 255, 255, 0.24);
+  background:
+    linear-gradient(140deg, rgba(255, 255, 255, 0.18), rgba(255, 255, 255, 0.08)),
+    linear-gradient(180deg, rgba(15, 23, 42, 0.72), rgba(30, 41, 59, 0.6));
+  box-shadow: 0 22px 48px rgba(3, 7, 18, 0.42), inset 0 1px 0 rgba(255, 255, 255, 0.24);
+}
+
+.neon-title {
+  color: #fefeff;
+  text-shadow: 0 0 10px rgba(103, 232, 249, 0.6), 0 0 24px rgba(244, 114, 182, 0.42);
+}
+
+.pulse-ring {
+  width: 10px;
+  height: 10px;
+  border-radius: 9999px;
+  background: #22d3ee;
+  box-shadow: 0 0 0 0 rgba(34, 211, 238, 0.75);
+  animation: pulse 1.8s ease-out infinite;
+}
+
+.link-card {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
+  border-radius: 1rem;
+  border: 1px solid rgba(255, 255, 255, 0.22);
+  background: linear-gradient(120deg, rgba(255, 255, 255, 0.2), rgba(255, 255, 255, 0.08));
+  padding: 0.95rem 1rem;
+  opacity: 1;
+  transform: translateY(0);
+  transition: transform 0.2s ease, border-color 0.2s ease, background 0.2s ease, box-shadow 0.2s ease;
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  .link-card {
+    opacity: 0;
+    transform: translateY(8px);
+    animation: rise 0.45s ease-out forwards;
+  }
+}
+
+.link-card:hover {
+  border-color: rgba(255, 255, 255, 0.58);
+  transform: translateY(-2px) scale(1.01);
+  background: linear-gradient(120deg, rgba(255, 255, 255, 0.28), rgba(255, 255, 255, 0.14));
+  box-shadow: 0 8px 22px rgba(56, 189, 248, 0.25);
+}
+
+.event-dot {
+  width: 10px;
+  height: 10px;
+  flex: 0 0 auto;
+  border-radius: 9999px;
+  background: linear-gradient(160deg, #22d3ee, #f472b6);
+  box-shadow: 0 0 0 4px rgba(255, 255, 255, 0.08), 0 0 18px rgba(34, 211, 238, 0.45);
+}
+
+.animate-fade-up {
+  animation: page-in 0.55s ease-out;
+}
+
+@keyframes rise {
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes page-in {
+  from {
+    opacity: 0;
+    transform: translateY(12px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes drift {
+  from {
+    transform: translateY(0px) translateX(0px);
+  }
+  to {
+    transform: translateY(-20px) translateX(14px);
+  }
+}
+
+@keyframes sparkle {
+  0%,
+  100% {
+    opacity: 0.2;
+    transform: scale(0.65);
+  }
+  50% {
+    opacity: 0.95;
+    transform: scale(1.25);
+  }
+}
+
+@keyframes beam-wave {
+  from {
+    transform: translateX(0px) translateY(0px) rotate(0deg);
+  }
+  to {
+    transform: translateX(18px) translateY(10px) rotate(3deg);
+  }
+}
+
+@keyframes pulse {
+  0% {
+    box-shadow: 0 0 0 0 rgba(34, 211, 238, 0.72);
+  }
+  70% {
+    box-shadow: 0 0 0 10px rgba(34, 211, 238, 0);
+  }
+  100% {
+    box-shadow: 0 0 0 0 rgba(34, 211, 238, 0);
+  }
+}
+
+@media (max-width: 640px) {
+  .party-beam {
+    width: 340px;
+    height: 160px;
+  }
+
+  .spark {
+    width: 7px;
+    height: 7px;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .hero-orb,
+  .party-beam,
+  .spark,
+  .link-card,
+  .animate-fade-up,
+  .pulse-ring {
+    animation: none !important;
+  }
+}
