@@ -2,27 +2,27 @@ const eventLinks = [
   {
     title: "Fun Activity (Ground)",
     description: "Team challenge registration",
-    href: "https://forms.gle/KfnzofFYBK1PzPJr8",
+    href: "https://forms.gle/BwmPjgRQzwjGRDcg6",
   },
   {
     title: "The Brain Game - Quiz",
     description: "Quiz round participation",
-    href: "https://forms.gle/uDwguMqv3FkSi4NU9",
+    href: "https://forms.gle/W2yiCWx8ws9myY4g6",
   },
   {
     title: "E-Sports (Collab)",
     description: "Gaming tournament sign-up",
-    href: "https://forms.gle/dY3uGxA953XwxZLQA",
+    href: "https://forms.gle/a1Q4yvF5L3eXN3pQA",
   },
   {
     title: "Code War Participation",
     description: "Competitive coding entry",
-    href: "https://forms.gle/yLBfNuxk5pPMXZBR6",
+    href: "https://forms.gle/U6JhUWckcXZNnUGu9",
   },
   {
     title: "Mr. and Ms. Interface Participation",
     description: "Stage event registration",
-    href: "https://forms.gle/LziHuQgKaN6EUK86A",
+    href: "https://forms.gle/qX8Kc5LJZZUguN8R6",
   },
 ];
 
@@ -52,8 +52,8 @@ export default function Home() {
             INTERFACE 2026
           </h1>
           <p className="mt-4 max-w-md text-sm leading-relaxed text-white/80 sm:text-base">
-            Party vibes, sharp competitions, and unforgettable moments. Pick your
-            event and claim your spot.
+            Party vibes, sharp competitions, and unforgettable moments. Pick
+            your event and claim your spot.
           </p>
 
           <div className="mt-6 flex items-center gap-2 text-xs text-cyan-100/90 sm:text-sm">
