@@ -92,12 +92,12 @@ export default function Home() {
           <footer className="mt-8 flex items-center justify-between border-t border-white/15 pt-5 text-xs text-white/60 sm:text-sm">
             <span>Follow updates on Instagram</span>
             <a
-              href="https://www.instagram.com"
+              href="https://www.instagram.com/cs.net.bcas?utm_source=qr&igsh=MW1xbmF2NzgxZ3VtbA=="
               target="_blank"
               rel="noopener noreferrer"
               className="underline decoration-white/30 underline-offset-4 transition hover:text-white"
             >
-              @interface2026
+              @cs.net/bcas
             </a>
           </footer>
         </section>
