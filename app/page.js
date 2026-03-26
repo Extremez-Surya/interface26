@@ -97,7 +97,7 @@ export default function Home() {
               rel="noopener noreferrer"
               className="underline decoration-white/30 underline-offset-4 transition hover:text-white"
             >
-              @cs.net/bcas
+              @cs.net.bcas
             </a>
           </footer>
         </section>
